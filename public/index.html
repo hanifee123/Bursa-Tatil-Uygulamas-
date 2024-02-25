@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/soleil.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/soleil.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+  <title>Bursa Tatil</title>
+  <!-- Leaflet CSS dosyasını ekleyin -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    /* Harita konteyneri için bir stil belirleyebilirsiniz */
+    #map {
+      height: 400px;
+      
+    }
+  </style>
+</head>
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <!-- Harita konteynerini ekleyin -->
+  <div id="map"></div>
+
+  <!-- Leaflet ve harita scriptlerini ekleyin -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    // Harita oluşturun ve belirtilen koordinatlara odaklanın
+    document.addEventListener("DOMContentLoaded", function() {
+      var map = L.map('map').setView([40.47631165324833, 27.68801105446872], 13);
+
+      // OpenStreetMap katmanını haritaya ekleyin
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+
+      // Marker ekleyen fonksiyon
+      function addMarker(lat, lng, popupContent) {
+        L.marker([lat, lng]).addTo(map)
+          .bindPopup(popupContent)
+          .openPopup();
+      }
+      addMarker(40.47631165324833, 27.68801105446872, 'Narlı Halk Plajı');
+      addMarker(40.364325829025475, 29.03538799539655, 'Kurşunlu Halk Plajı');
+      addMarker(40.38642101217839, 28.829715071872585, 'Kumyaka Halk Plajı');
+      addMarker(40.361692577072496, 29.02355844434478, 'Kurşunlu Kadınlar Plajı');
+      addMarker(40.47775465248736, 29.08737930127481, 'Büyükkumla Halk Plajı');
+      addMarker(40.469011369907534, 29.097921366923092, 'Küçükkumla Halk Plajı');
+      addMarker(40.417865720664075, 29.10095514199446, 'Gemsaz Halk Plajı');
+      addMarker(40.385863701975495, 29.071978146749505, 'Kumsaz Halk Plajı');
+      addMarker(40.396763310979665, 28.381666797183822, 'Yeniköy Halk Plajı');
+      addMarker(40.398671670915625, 28.367808882048433, 'Malkara Halk Plajı');
+      addMarker(40.39670717228067, 28.297200288327936, 'Kurşunlu Halk Plajı');
+      addMarker(40.356486108511284, 28.971301364779517, 'Altıntaş Halk Plajı');
+      addMarker(40.356490870800926, 28.94268786094899, 'Altınkum Halk Plajı');
+      addMarker(40.356573534172774, 28.924163862105257, 'Güzelyalı Halk Plajı');
+      addMarker(40.394518711290985, 28.798551729785757, 'Tirilye Halk Plajı');
+      addMarker(40.36571759832384, 28.677187937782648, 'Eşkel Halk Plajı');
+      addMarker(40.36552217384922, 28.632324714052377, 'Eğerce Halk Plajı');
+      addMarker(40.372619924745216, 28.590580263741057, 'Mesudiye Halk Plajı');
+      addMarker(40.466764754164544, 29.336141493648082, 'Orhangazi Halk Plajı');
+      addMarker(40.426719620623885, 29.711110684348302, 'İnciraltı Halk Plajı');
+
+  
+    });
+  </script>
+</body>
+</html>
