@@ -1,5 +1,6 @@
 # Getting Started with Bursa Tatil Uygulaması
 Bu websitesinde Bursa'daki halk plajlarına ait bilgiler yer almaktadır.
+Vercel link: https://bursa-tatil-uygulamasi.vercel.app/
 
 ## Available Scripts
 
